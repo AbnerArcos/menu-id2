@@ -5,10 +5,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-html, body {
-  height: 100%;
-  overflow-x: hidden;
-}
 
 body {
   background: #e9e4de;
@@ -35,7 +31,6 @@ body {
   min-height: 100vh;
   box-shadow: 0 20px 60px rgba(0,0,0,0.12);
   position: relative;
-  overflow: hidden;
 }
 
 /* HEADER */
@@ -209,6 +204,7 @@ h2 {
   padding: 6px;
   background: white;
   border-radius: 999px;
+
 
   scrollbar-width: none;        /* Firefox */
 }

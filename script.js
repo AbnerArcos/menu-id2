@@ -139,52 +139,57 @@ if (navigator.vibrate) {
   // ===============================
   // TABS CLICK
   // ===============================
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      const target = document.getElementById(tab.dataset.target);
+      const offset = topBar.offsetHeight + 20;
 
-    const target = document.getElementById(tab.dataset.target);
+      const topPosition =
+        target.getBoundingClientRect().top +
+        window.pageYOffset - offset;
 
-    target.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
+      window.scrollTo({
+        top: topPosition,
+        behavior: "smooth"
+      });
+    });
+  });
+
+  // ===============================
+  // SCROLL SPY
+  // ===============================
+  window.addEventListener("scroll", () => {
+
+    sections.forEach(section => {
+
+      const sectionTop =
+        section.offsetTop - topBar.offsetHeight - 60;
+
+      const sectionBottom =
+        sectionTop + section.offsetHeight;
+
+      if (
+        window.scrollY >= sectionTop &&
+        window.scrollY < sectionBottom
+      ) {
+        currentActive = section.id;
+      }
+    });
+
+    tabs.forEach(tab => {
+      tab.classList.remove("active");
+
+      if (tab.dataset.target === currentActive) {
+        tab.classList.add("active");
+        tab.scrollIntoView({
+          behavior: "smooth",
+          inline: "center",
+          block: "nearest"
+        });
+      }
     });
 
   });
-});
-
-
-// ===============================
-// SCROLL SPY CON INTERSECTION OBSERVER
-// ===============================
-
-const observer = new IntersectionObserver((entries) => {
-
-  entries.forEach(entry => {
-
-    if (entry.isIntersecting) {
-
-      tabs.forEach(tab => {
-        tab.classList.remove("active");
-
-        if (tab.dataset.target === entry.target.id) {
-          tab.classList.add("active");
-        }
-      });
-
-    }
-
-  });
-
-}, {
-  root: null,
-  rootMargin: "-120px 0px -60% 0px",
-  threshold: 0
-});
-
-sections.forEach(section => {
-  observer.observe(section);
-});
-
 
   // ===============================
   // ABRIR MODAL
