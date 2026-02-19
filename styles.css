@@ -21,7 +21,6 @@ body {
 .app {
   width: 100%;
   max-width: 380px;
-  margin: 0 auto;  /* 👈 CENTRADO ESTABLE */
   background: #f9f7f4;
   border-radius: 30px;
   padding: 20px;
@@ -29,7 +28,6 @@ body {
   box-shadow: 0 20px 60px rgba(0,0,0,0.12);
   position: relative;
 }
-
 
 /* HEADER */
 .header {
@@ -41,7 +39,7 @@ body {
 
 .header h1 {
   font-size: 20px;
-  color: #b58b63;
+  color: black;
   font-weight: 500;
 }
 
@@ -474,14 +472,14 @@ textarea {
   border-radius: 50%;
   border: none;
   background: #f1ece6;
-  color: #b58b63;
+  color: black;
   font-size: 18px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 #closeCart:hover {
-  background: #b58b63;
+  background: black;
   color: white;
   transform: scale(1.05);
 }
@@ -498,7 +496,7 @@ textarea {
   border-radius: 50%;
   border: none;
   background: rgba(255,255,255,0.9);
-  color: #b58b63;
+  color: black;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
@@ -507,7 +505,7 @@ textarea {
 }
 
 .close-modal:hover {
-  background: #b58b63;
+  background: black;
   color: white;
   transform: scale(1.05);
 }
