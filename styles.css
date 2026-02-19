@@ -8,23 +8,20 @@
 
 body {
   background: #e9e4de;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  margin: 0;
 }
 
 /* WRAPPER PARA CENTRAR */
 .app-wrapper {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  
 }
+
 
 /* APP CONTAINER */
 .app {
   width: 100%;
   max-width: 380px;
+  margin: 0 auto;  /* 👈 CENTRADO ESTABLE */
   background: #f9f7f4;
   border-radius: 30px;
   padding: 20px;
@@ -32,6 +29,7 @@ body {
   box-shadow: 0 20px 60px rgba(0,0,0,0.12);
   position: relative;
 }
+
 
 /* HEADER */
 .header {
